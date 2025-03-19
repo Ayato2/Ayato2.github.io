@@ -8,65 +8,74 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Header styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    width: 100%;
     background-color: white;
 }
 
+.logo {
+    text-align: center;
+    padding: 20px 0;
+}
+
 .logo img {
-    height: 80px;
+    max-width: 100px;
+    height: auto;
 }
 
 nav ul {
-    display: flex;
     list-style: none;
+    width: 100%;
 }
 
 nav li {
-    margin-left: 20px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    text-align: center;
 }
 
 nav a {
+    display: block;
     text-decoration: none;
     color: #e63946;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
+    padding: 15px 0;
 }
 
 /* Main content styles */
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
+    width: 100%;
     background-color: #f8f9fa;
 }
 
 .item {
-    flex-basis: calc(33.333% - 20px);
-    margin-bottom: 20px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f8f9fa;
 }
 
 h2 {
     font-size: 28px;
     margin-bottom: 15px;
+    color: #333;
 }
 
 .item-content {
     font-size: 16px;
     color: #333;
+    line-height: 1.5;
 }
 
-/* Image grid */
+/* Image grid for mobile */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-gap: 10px;
 }
 
@@ -75,23 +84,59 @@ h2 {
     height: auto;
 }
 
-/* Responsive styles */
-@media (max-width: 1024px) {
-    .item {
-        flex-basis: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 768px) {
+/* Desktop styles */
+@media (min-width: 768px) {
     header {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .logo {
+        text-align: left;
+    }
+    
+    .logo img {
+        height: 80px;
     }
     
     nav ul {
-        margin-top: 20px;
+        display: flex;
+    }
+    
+    nav li {
+        margin-left: 20px;
+        border-bottom: none;
+        width: auto;
+    }
+    
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
     }
     
     .item {
-        flex-basis: 100%;
+        flex-basis: calc(33.333% - 20px);
+        margin-bottom: 20px;
+    }
+    
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 480px) and (max-width: 767px) {
+    .item {
+        width: 100%;
+    }
+    
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
