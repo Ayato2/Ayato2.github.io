@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Reset i style bazowe */
 * {
     margin: 0;
     padding: 0;
@@ -12,19 +12,12 @@ body {
     overflow-x: hidden;
 }
 
-/* Header styles for mobile */
+/* Style dla nagłówka */
 header {
     width: 100%;
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.logo {
     text-align: center;
-    margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 .logo img {
@@ -32,8 +25,12 @@ header {
     height: auto;
 }
 
+/* Style dla nawigacji */
 nav {
     width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    margin-top: 10px;
 }
 
 nav ul {
@@ -41,7 +38,6 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
 }
 
 nav li {
@@ -55,7 +51,7 @@ nav a {
     font-weight: bold;
 }
 
-/* Main content styles */
+/* Style dla głównej treści */
 main {
     width: 100%;
     background-color: #f8f9fa;
@@ -79,7 +75,7 @@ h2 {
     line-height: 1.5;
 }
 
-/* Image grid */
+/* Siatka obrazów */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -91,16 +87,16 @@ h2 {
     height: auto;
 }
 
-/* Desktop styles */
+/* Style dla ekranów desktopowych */
 @media (min-width: 768px) {
     header {
-        flex-direction: row;
-        justify-content: space-between;
+        display: flex;
+        justify-content: flex-start;
         padding: 20px;
     }
     
-    .logo {
-        margin-bottom: 0;
+    nav {
+        margin-top: 0;
     }
     
     nav ul {
@@ -120,7 +116,7 @@ h2 {
     }
 }
 
-/* Medium sized screens */
+/* Style dla ekranów średnich */
 @media (min-width: 480px) and (max-width: 767px) {
     .item {
         width: 100%;
